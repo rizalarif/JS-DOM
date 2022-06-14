@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar DOM</title>
+</head>
+<body>
+    <!-- Dom Element -->
+    <h2 id="cobaID"></h2>
+    <script>
+        document.getElementById('cobaID').innerHTML="ini isi tag H2"
+    </script>
+    <hr>
+    <!-- Mencari element dari nama tag nya -->
+    <h5>hallo : </h5>
+    <p id="cobap"></p>
+    <script>
+        const elementH5 = document.getElementsByTagName("h5");
+        document.getElementById("cobap").innerHTML = elementH5[0].innerHTML + "Rizal Arif"
+    </script>
+    <hr>
+    <!-- Selektor CSS  -->
+    <button type="button" id="tombolCSS" style="color: #bdbdbd;">
+        Submit
+    </button>
+    <script>
+        document.getElementById("tombolCSS").style.color = "red";
+    </script>
+    <hr>
+    <!-- DOM Event -->
+    <h2 onclick="this.innerHTML = 'Berubah!'">click</h2>
+        <!--Bisa Menggunakan Function atau disebut event handler -->
+        <h4 onclick="fungsiEvent(this)">Klik ini dong</h4>
+        <script>
+            function fungsiEvent(param){
+                param.innerHTML = "Berubah Lagi!";
+            }
+        </script>
+
+        <!-- Contoh Event Menggunakan Button -->
+        <h5>Click Dibawah ini untuk tau tanggal dan jam berapa ini</h5>
+        <button id="tombol2">Go!</button>
+        <p id="isi2"></p>
+        <script>
+            document.getElementById("tombol2").onclick = lihatTanggal;
+            function lihatTanggal(){
+                document.getElementById("isi2").innerHTML = Date();
+            }
+        </script>
+
+        <!-- Contoh MouseOver MouseIn -->
+        <button id="tombol3" onmouseover="over(this)" onmouseout="out(this)">.</button>
+        <script>
+            function over(obj){
+                obj.innerHTML = "Jangan Click!"
+            }
+            function out(obj){
+                obj.innerHTML = "Sini Dong!"
+            }
+        </script>
+    <hr>
+    <!-- Event Listener -->
+    <button id="tombol4">Coba Date()</button>
+    <p id="tgl"></p>
+    <script>
+        document.getElementById("tombol4").addEventListener("click", tglBerapa);
+        function tglBerapa(){
+            document.getElementById("tgl").innerHTML = Date();
+        }
+    </script>
+
+    
+</body>
+</html>
