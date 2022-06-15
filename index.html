@@ -71,6 +71,33 @@
         }
     </script>
 
-    
+    <!-- DOM Navigation -->
+        <!-- Contoh mengkopi sebuah element cara 1 -->
+            <h3 id="sabotase1">Ini isi tag h3</h3>
+            <p id="sabotase2"></p>
+
+            <script>
+                document.getElementById("sabotase2").innerHTML = document.getElementById("sabotase1").innerHTML;
+            </script>
+        
+        <!-- Contoh mengkopi sebuah element cara 2 -->
+            <!-- <script>
+                document.getElementById("sabotase2").innerHTML = 
+                document.getElementById("sabotase1").firstChild.nodeValue;
+            </script> -->
+
+        <!-- NodeName -->
+        <script>
+            document.getElementById("sabotase2").innerHTML = 
+            document.getElementById("sabotase1").nodeName
+        </script>
+
+        <!-- NodeValue -->
+        <!-- <script>
+            document.getElementById("sabotase2").innerHTML = 
+            document.getElementById("sabotase1").nodeValue
+        </script> -->
+
+        
 </body>
 </html>
